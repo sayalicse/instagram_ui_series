@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_ui_series/Screens/Login/loginscreen.dart';
 import 'package:instagram_ui_series/Widgets/uihelper.dart';
 
 class SignUpScreen extends StatelessWidget{
@@ -45,7 +46,7 @@ class SignUpScreen extends StatelessWidget{
             ),
             UiHelper.CustomButton(
                 callback: (){
-
+                  Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>LoginScreen()));
                 },
                 buttonname: 'Sign Up'),
             SizedBox(
@@ -62,6 +63,7 @@ class SignUpScreen extends StatelessWidget{
                 UiHelper.CustomTextButton(
                     text: 'Log In',
                     callback: (){
+                      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>LoginScreen()));
 
                 })
               ],

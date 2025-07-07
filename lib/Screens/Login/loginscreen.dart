@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:instagram_ui_series/Screens/bottomnavigate/bottomnav.dart';
 import 'package:instagram_ui_series/Widgets/uihelper.dart';
+
+import '../Signup/signupscreen.dart';
 
 class LoginScreen extends StatelessWidget{
   TextEditingController emailcontroller=TextEditingController();
@@ -38,7 +41,7 @@ class LoginScreen extends StatelessWidget{
               height: 20,
             ),
             UiHelper.CustomButton(callback: (){
-
+Navigator.push(context,MaterialPageRoute(builder:(context)=>BottomNavScreen()));
             }, buttonname:'Log In'),
             SizedBox(
               height: 20,
@@ -48,7 +51,9 @@ class LoginScreen extends StatelessWidget{
               children: [
               UiHelper.CustomImage(imgurl: 'facebook.png'),
                 SizedBox(width: 8),
-               UiHelper.CustomTextButton(text: 'Log in with Facebook', callback: (){})
+               UiHelper.CustomTextButton(text: 'Log in with Facebook', callback: (){
+
+               })
                ],
             ),
             SizedBox(
@@ -74,7 +79,7 @@ class LoginScreen extends StatelessWidget{
               children: [
                 Text("Don't have an account?",style: TextStyle(fontSize: 14,color: Colors.white),),
                 UiHelper.CustomTextButton(text: 'Sign Up', callback: (){
-
+                  Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>SignUpScreen()));
                 })
               ],
             )

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Screens/Login/loginscreen.dart';
+import 'Screens/Search/searchpage.dart';
 import 'Screens/Signup/signupscreen.dart';
 import 'Screens/Splash/splashscreen.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner:false,//remove debug banner
       title: 'Instagram',
       theme: ThemeData.dark(),
-      home: SignUpScreen()
+      home: SearchPage()
 
     );
   }
