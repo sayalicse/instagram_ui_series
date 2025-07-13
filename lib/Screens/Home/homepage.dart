@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_ui_series/Widgets/uihelper.dart';
 
+import '../Chats/chatpage.dart';
+
 class HomePage extends StatelessWidget {
   var arrcontent = [
     {
@@ -68,7 +70,9 @@ class HomePage extends StatelessWidget {
               onPressed: () {},
               icon: UiHelper.CustomImage(imgurl: 'igtv.png')),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>Chatpage()));//when click then go back to home screen
+              },
               icon: UiHelper.CustomImage(imgurl: 'messanger.png')),
         ],
       ),
