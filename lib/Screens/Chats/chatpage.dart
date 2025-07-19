@@ -186,7 +186,7 @@ class Chatpage extends StatelessWidget{
               Container(
                 height: 120,
                 width: 600,
-                color: Colors.black,
+                color: Colors.black12,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: arrhorcontent.length,
