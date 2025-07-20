@@ -195,77 +195,308 @@ class ProfilePage extends StatelessWidget {
                 child: TabBarView(
                   children: [
                     CaptureMomentsTab(),
-                    Container(), // Placeholder for TaggedPostsTab
+                    // Container(),
+                    // Placeholder for TaggedPostsTab
+                    UploadphotovideoTab()
                   ],
                 ),
               ),
 
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Container(
-                      width: 200,
-                      height: 200,
-                      decoration: BoxDecoration(
-                        color: Colors.black12,
-                        border: Border.all(
-                          width: 1.5,
-                          color: Colors.white10
-                        )
 
 
-                      ),
-
-
-                      child: Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CircleAvatar(
-                              radius: 20,
-                              backgroundColor: Colors.grey,
-                              child: Icon(
-                                Icons.person,
-
-                                color: Colors.white,
-                                size: 20,
-                              ),
-                            ),
-                            SizedBox(height: 10,),
-                            Text('Add your name',style: TextStyle(fontSize: 13,color: Colors.white),),
-                            SizedBox(height: 5,),
-                            Text("Add your full name so your\n friends know it's you.",style: TextStyle(fontSize: 10,color: Colors.grey),),
-                            SizedBox(height: 20,),
-                            Container(
-                             // Background of the container
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(4))
-                              ),
-                              child: ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.deepPurpleAccent, // ✅ Button background color
-                                  foregroundColor: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12), // Match container radius
-                                  ),// Optional: Text/icon color
-                                ),
-                                child: Text('Add name'),
-                              ),
-                            )
-
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              )
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class UploadphotovideoTab extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.black,
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child:
+          Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Photos and \nVideos of you",
+                  style: TextStyle(fontSize: 15, color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 10),
+                Text(
+                  "When people tag you in photos and\n videos,they'll appear here",
+                  style: TextStyle(fontSize: 13, color: Colors.grey),
+                ),
+                SizedBox(height: 30),
+
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Complete your profile',
+                          style: TextStyle(fontSize: 15, color: Colors.white),
+                        ),
+                        Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: '2 of 4 ',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              TextSpan(
+                                text: 'Complete',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Container(
+                                  width: 200,
+                                  height: 200,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black12,
+                                    border: Border.all(width: 1.5, color: Colors.white10),
+                                  ),
+                                  child: Center(
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        CircleAvatar(
+                                          radius: 20,
+                                          backgroundColor: Colors.grey,
+                                          child: Icon(
+                                            Icons.person,
+                                            color: Colors.white,
+                                            size: 20,
+                                          ),
+                                        ),
+                                        SizedBox(height: 10),
+                                        Text('Add your name',
+                                            style: TextStyle(fontSize: 13, color: Colors.white)),
+                                        SizedBox(height: 5),
+                                        Text(
+                                          "Add your full name so your\n friends know it's you.",
+                                          style: TextStyle(fontSize: 10, color: Colors.grey),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                        SizedBox(height: 35),
+                                        ElevatedButton(
+                                          onPressed: () {},
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.deepPurpleAccent,
+                                            foregroundColor: Colors.white,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(12),
+                                            ),
+                                          ),
+                                          child: Text('Add name'),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(5.0),
+                                child: Container(
+                                  width: 200,
+                                  height: 200,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black12,
+                                    border: Border.all(width: 1.5, color: Colors.white10),
+                                  ),
+                                  child: Center(
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        CircleAvatar(
+                                          radius: 20,
+                                          backgroundColor: Colors.grey,
+                                          child: Image.asset('assets/images/comment.png'),
+                                        ),
+                                        SizedBox(height: 10),
+                                        Text('Add bio',
+                                            style: TextStyle(fontSize: 13, color: Colors.white)),
+                                        SizedBox(height: 5),
+                                        Text(
+                                          "Tell your followers a little bit\n about yourself.",
+                                          style: TextStyle(fontSize: 10, color: Colors.grey),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                        SizedBox(height: 35),
+                                        ElevatedButton(
+                                          onPressed: () {},
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.deepPurpleAccent,
+                                            foregroundColor: Colors.white,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(12),
+                                            ),
+                                          ),
+                                          child: Text('Add bio'),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              // Profile Picture Card with Check
+                              Padding(
+                                padding: const EdgeInsets.all(5.0),
+                                child: Container(
+                                  width: 200,
+                                  height: 200,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black12,
+                                    border: Border.all(width: 1.5, color: Colors.white10),
+                                  ),
+                                  child: Center(
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Stack(
+                                          clipBehavior: Clip.none,
+                                          children: [
+                                            CircleAvatar(
+                                              radius: 20,
+                                              backgroundColor: Colors.grey,
+                                              child: Icon(Icons.person_pin, color: Colors.white),
+                                            ),
+                                            Positioned(
+                                              bottom: -2,
+                                              right: -2,
+                                              child: CircleAvatar(
+                                                radius: 10,
+                                                backgroundColor: Colors.green,
+                                                child: Icon(Icons.check, size: 10, color: Colors.white),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 10),
+                                        Text('Add profile picture',
+                                            style: TextStyle(fontSize: 13, color: Colors.white)),
+                                        SizedBox(height: 5),
+                                        Text(
+                                          "Choose a profile picture\n to represent yourself on\n Instagram.",
+                                          style: TextStyle(fontSize: 10, color: Colors.grey),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                        SizedBox(height: 20),
+                                        ElevatedButton(
+                                          onPressed: () {},
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.deepPurpleAccent,
+                                            foregroundColor: Colors.white,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(12),
+                                            ),
+                                          ),
+                                          child: Text('Change picture'),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              // Find People to Follow
+                              Padding(
+                                padding: const EdgeInsets.all(5.0),
+                                child: Container(
+                                  width: 200,
+                                  height: 200,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black12,
+                                    border: Border.all(width: 1.5, color: Colors.white10),
+                                  ),
+                                  child: Center(
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Stack(
+                                          clipBehavior: Clip.none,
+                                          children: [
+                                            CircleAvatar(
+                                              radius: 20,
+                                              backgroundColor: Colors.grey,
+                                              child: Icon(Icons.people_outline, color: Colors.white),
+                                            ),
+                                            Positioned(
+                                              bottom: -2,
+                                              right: -2,
+                                              child: CircleAvatar(
+                                                radius: 10,
+                                                backgroundColor: Colors.green,
+                                                child: Icon(Icons.check, size: 10, color: Colors.white),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 10),
+                                        Text('Find people to follow',
+                                            style: TextStyle(fontSize: 13, color: Colors.white)),
+                                        SizedBox(height: 5),
+                                        Text(
+                                          "Follow people and interests you\n care about.",
+                                          style: TextStyle(fontSize: 10, color: Colors.grey),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                        SizedBox(height: 30),
+                                        ElevatedButton(
+                                          onPressed: () {},
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.deepPurpleAccent,
+                                            foregroundColor: Colors.white,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(12),
+                                            ),
+                                          ),
+                                          child: Text('Change picture'),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                ),
+              ],
+            ),
+          ),
+        )
     );
   }
 }
@@ -275,63 +506,286 @@ class CaptureMomentsTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              "Capture the moment\nwith a friend",
-              style: TextStyle(fontSize: 15, color: Colors.white),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Create your first post',
-              style: TextStyle(fontSize: 13, color: Colors.blueAccent),
-            ),
-            SizedBox(height: 30),
-
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Complete your profile',
-                      style: TextStyle(fontSize: 15, color: Colors.white),
-                    ),
-                    Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                            text: '2 of 4 ',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          TextSpan(
-                            text: 'Complete',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.grey,
-                              fontWeight: FontWeight.normal,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child:
+        Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "Capture the moment\nwith a friend",
+                style: TextStyle(fontSize: 15, color: Colors.white),
+                textAlign: TextAlign.center,
               ),
-            ),
-          ],
+              SizedBox(height: 10),
+              Text(
+                'Create your first post',
+                style: TextStyle(fontSize: 13, color: Colors.blueAccent),
+              ),
+              SizedBox(height: 30),
+
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Complete your profile',
+                        style: TextStyle(fontSize: 15, color: Colors.white),
+                      ),
+                      Text.rich(
+                        TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '2 of 4 ',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            TextSpan(
+                              text: 'Complete',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                  color: Colors.black12,
+                                  border: Border.all(width: 1.5, color: Colors.white10),
+                                ),
+                                child: Center(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 20,
+                                        backgroundColor: Colors.grey,
+                                        child: Icon(
+                                          Icons.person,
+                                          color: Colors.white,
+                                          size: 20,
+                                        ),
+                                      ),
+                                      SizedBox(height: 10),
+                                      Text('Add your name',
+                                          style: TextStyle(fontSize: 13, color: Colors.white)),
+                                      SizedBox(height: 5),
+                                      Text(
+                                        "Add your full name so your\n friends know it's you.",
+                                        style: TextStyle(fontSize: 10, color: Colors.grey),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      SizedBox(height: 35),
+                                      ElevatedButton(
+                                        onPressed: () {},
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: Colors.deepPurpleAccent,
+                                          foregroundColor: Colors.white,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(12),
+                                          ),
+                                        ),
+                                        child: Text('Add name'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                  color: Colors.black12,
+                                  border: Border.all(width: 1.5, color: Colors.white10),
+                                ),
+                                child: Center(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 20,
+                                        backgroundColor: Colors.grey,
+                                        child: Image.asset('assets/images/comment.png'),
+                                      ),
+                                      SizedBox(height: 10),
+                                      Text('Add bio',
+                                          style: TextStyle(fontSize: 13, color: Colors.white)),
+                                      SizedBox(height: 5),
+                                      Text(
+                                        "Tell your followers a little bit\n about yourself.",
+                                        style: TextStyle(fontSize: 10, color: Colors.grey),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      SizedBox(height: 35),
+                                      ElevatedButton(
+                                        onPressed: () {},
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: Colors.deepPurpleAccent,
+                                          foregroundColor: Colors.white,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(12),
+                                          ),
+                                        ),
+                                        child: Text('Add bio'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            // Profile Picture Card with Check
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                  color: Colors.black12,
+                                  border: Border.all(width: 1.5, color: Colors.white10),
+                                ),
+                                child: Center(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Stack(
+                                        clipBehavior: Clip.none,
+                                        children: [
+                                          CircleAvatar(
+                                            radius: 20,
+                                            backgroundColor: Colors.grey,
+                                            child: Icon(Icons.person_pin, color: Colors.white),
+                                          ),
+                                          Positioned(
+                                            bottom: -2,
+                                            right: -2,
+                                            child: CircleAvatar(
+                                              radius: 10,
+                                              backgroundColor: Colors.green,
+                                              child: Icon(Icons.check, size: 10, color: Colors.white),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(height: 10),
+                                      Text('Add profile picture',
+                                          style: TextStyle(fontSize: 13, color: Colors.white)),
+                                      SizedBox(height: 5),
+                                      Text(
+                                        "Choose a profile picture\n to represent yourself on\n Instagram.",
+                                        style: TextStyle(fontSize: 10, color: Colors.grey),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      SizedBox(height: 20),
+                                      ElevatedButton(
+                                        onPressed: () {},
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: Colors.deepPurpleAccent,
+                                          foregroundColor: Colors.white,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(12),
+                                          ),
+                                        ),
+                                        child: Text('Change picture'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            // Find People to Follow
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                  color: Colors.black12,
+                                  border: Border.all(width: 1.5, color: Colors.white10),
+                                ),
+                                child: Center(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Stack(
+                                        clipBehavior: Clip.none,
+                                        children: [
+                                          CircleAvatar(
+                                            radius: 20,
+                                            backgroundColor: Colors.grey,
+                                            child: Icon(Icons.people_outline, color: Colors.white),
+                                          ),
+                                          Positioned(
+                                            bottom: -2,
+                                            right: -2,
+                                            child: CircleAvatar(
+                                              radius: 10,
+                                              backgroundColor: Colors.green,
+                                              child: Icon(Icons.check, size: 10, color: Colors.white),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(height: 10),
+                                      Text('Find people to follow',
+                                          style: TextStyle(fontSize: 13, color: Colors.white)),
+                                      SizedBox(height: 5),
+                                      Text(
+                                        "Follow people and interests you\n care about.",
+                                        style: TextStyle(fontSize: 10, color: Colors.grey),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      SizedBox(height: 30),
+                                      ElevatedButton(
+                                        onPressed: () {},
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: Colors.deepPurpleAccent,
+                                          foregroundColor: Colors.white,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(12),
+                                          ),
+                                        ),
+                                        child: Text('Change picture'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+              ),
+            ],
+          ),
         ),
-      ),
+      )
     );
   }
 }
