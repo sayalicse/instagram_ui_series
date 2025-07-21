@@ -6,6 +6,7 @@ import 'Screens/Login/loginscreen.dart';
 import 'Screens/Search/searchpage.dart';
 import 'Screens/Signup/signupscreen.dart';
 import 'Screens/Splash/splashscreen.dart';
+import 'Screens/like/likepage.dart';
 import 'Screens/profile/profilepage.dart';
 
 void main() {
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner:false,//remove debug banner
       title: 'Instagram',
       theme: ThemeData.dark(),
-      home: ProfilePage()
+      home: LikePage()
 
     );
   }

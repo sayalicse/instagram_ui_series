@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_ui_series/Screens/like/likepage.dart';
 import 'package:instagram_ui_series/Widgets/uihelper.dart';
 
 import '../Chats/chatpage.dart';
@@ -67,8 +68,10 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         actions: [
           IconButton(
-              onPressed: () {},
-              icon: UiHelper.CustomImage(imgurl: 'igtv.png')),
+              onPressed: () {
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>LikePage()));
+              },
+              icon: UiHelper.CustomImage(imgurl: 'like.png')),
           IconButton(
               onPressed: () {
                 Navigator.push(context,MaterialPageRoute(builder: (context)=>Chatpage()));//when click then go back to home screen

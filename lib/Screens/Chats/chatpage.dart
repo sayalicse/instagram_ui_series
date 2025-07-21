@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:instagram_ui_series/Widgets/uihelper.dart';
 import 'package:marquee/marquee.dart';
 
+import '../Home/homepage.dart';
+
 
 class Chatpage extends StatelessWidget{
   TextEditingController searchcontroller=TextEditingController();
@@ -130,7 +132,9 @@ class Chatpage extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 88,
-        leading: IconButton(onPressed: (){}, icon: Icon(CupertinoIcons.arrow_left)),
+        leading: IconButton(onPressed: (){
+          Navigator.push(context,MaterialPageRoute(builder: (context)=>HomePage()));
+        }, icon: Icon(CupertinoIcons.arrow_left)),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
