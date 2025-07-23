@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../Home/homepage.dart';
+
 class LikePage extends StatelessWidget{
   const LikePage({super.key});
   @override
@@ -8,7 +10,9 @@ class LikePage extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
-        leading: IconButton(onPressed: (){}, icon: Icon(CupertinoIcons.arrow_left,color: Colors.white,)),
+        leading: IconButton(onPressed: (){
+          Navigator.push(context,MaterialPageRoute(builder: (context)=>HomePage()));
+        }, icon: Icon(CupertinoIcons.arrow_left,color: Colors.white,)),
         title: Text('Notifications',style: TextStyle(color: Colors.white,fontSize: 18),),
       ),
       body: SingleChildScrollView(
@@ -282,7 +286,7 @@ class LikePage extends StatelessWidget{
                             //   ),
                             //   child: Text('Confirm'),
                             // ),
-                            SizedBox(width: 15,),
+                            SizedBox(width: 59,),
                             ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.white10,
                                 foregroundColor: Colors.white,
@@ -431,6 +435,7 @@ class LikePage extends StatelessWidget{
                               ),
                             ),
                             SizedBox(width: 70,),
+
                      Container(
                       width: 50, // square dimensions
                       height: 50,
@@ -447,13 +452,14 @@ class LikePage extends StatelessWidget{
 
                      )],
                         ),
+                        SizedBox(height: 20,),
                         Container(
                           width: double.infinity,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Last 30 days',style: TextStyle(color: Colors.white,fontSize: 15),),
+                              Text('Older',style: TextStyle(color: Colors.white,fontSize: 15),),
                               SizedBox(height: 11,),
                               Row(
                                 children: [
@@ -496,6 +502,76 @@ class LikePage extends StatelessWidget{
                                   //   ),
                                   //   child: Text('Confirm'),
                                   // ),
+                                  SizedBox(width: 59,),
+                                  ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.white10,
+                                      foregroundColor: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      )
+                                  ) ,child: Text('Following'))
+
+
+
+
+
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 10,),
+                        Container(
+                          width: double.infinity,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              // Text('Last 30 days',style: TextStyle(color: Colors.white,fontSize: 15),),
+                              // SizedBox(height: 11,),
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 25,
+                                    backgroundImage: NetworkImage(                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStJ9cnXUWrzDFunS7hwH7x4WivNEHPYTpMrA&s",
+
+                                    ),
+                                  ),
+                                  SizedBox(width: 10,),
+                                  RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: 'pranav_1009\nrequested to follow\nyou. ',
+                                          style: TextStyle(
+                                            color: Colors.white,
+
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: '5w',
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 15,),
+                                  ElevatedButton(
+                                    onPressed: () {},
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.deepPurpleAccent,
+                                      foregroundColor: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                    child: Text('Confirm'),
+                                  ),
                                   SizedBox(width: 15,),
                                   ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.white10,
@@ -514,6 +590,397 @@ class LikePage extends StatelessWidget{
                             ],
                           ),
                         ),
+                        SizedBox(height: 15,),
+                        Row(
+                          children: [
+                            Stack(
+                              children: [
+                                // Main Profile Image
+                                CircleAvatar(
+                                  radius: 25,
+                                  backgroundImage: NetworkImage(
+                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStJ9cnXUWrzDFunS7hwH7x4WivNEHPYTpMrA&s",
+                                  ),
+                                ),
+
+                                // Small red circle with white heart icon
+                                Positioned(
+                                  bottom: -1,
+                                  right: -1,
+                                  child: CircleAvatar(
+                                    radius: 10,
+                                    backgroundColor: Colors.red,
+                                    child: Icon(
+                                      Icons.favorite, // heart icon
+                                      size: 12,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+
+                            SizedBox(width: 10,),
+                            RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: 'aryan_chavan_0707 liked your story.\n comment ',
+                                    style: TextStyle(
+                                      color: Colors.white,
+
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: '😢 5w',
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 70,),
+
+                            Container(
+                              width: 50, // square dimensions
+                              height: 50,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnRGQuizczA_CYF0Lo-xuCE1FWvsO7ZdsGWw&s'), // your background image
+                                  fit: BoxFit.cover,
+                                ),
+                                borderRadius: BorderRadius.circular(10), // rounded square
+                              ),
+
+
+
+
+                            )],
+                        ),
+                        SizedBox(height: 15,),
+
+                        Container(
+                          width: double.infinity,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Suggested for you',style: TextStyle(color: Colors.white,fontSize: 15),),
+                              SizedBox(height: 11,),
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 25,
+                                    backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnRGQuizczA_CYF0Lo-xuCE1FWvsO7ZdsGWw&s"),
+                                  ),
+                                  SizedBox(width: 10,),
+                                  RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: 'shivraj Patil\n ',
+                                          style: TextStyle(
+                                            color: Colors.white,
+
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: 'Followed by shruti_5537',
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 15,),
+                                  // ElevatedButton(
+                                  //   onPressed: () {},
+                                  //   style: ElevatedButton.styleFrom(
+                                  //     backgroundColor: Colors.deepPurpleAccent,
+                                  //     foregroundColor: Colors.white,
+                                  //     shape: RoundedRectangleBorder(
+                                  //       borderRadius: BorderRadius.circular(10),
+                                  //     ),
+                                  //   ),
+                                  //   child: Text('Confirm'),
+                                  // ),
+                                  SizedBox(width: 59,),
+                                  ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.deepPurpleAccent,
+                                      foregroundColor: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      )
+                                  ) ,child: Text('Follow')),
+                                  SizedBox(width: 15,),
+                                  Icon(Icons.close,color: Colors.grey,)
+
+
+
+
+
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 15,),
+                        Container(
+                          width: double.infinity,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 25,
+                                    backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN__lAaf0b4nZ5asE_zY1IMhPiEh3MgRwBrA&s"),
+                                  ),
+                                  SizedBox(width: 10,),
+                                  RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: 'shivraj Patil\n ',
+                                          style: TextStyle(
+                                            color: Colors.white,
+
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: 'Followed by shruti_5537',
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 15,),
+                                  // ElevatedButton(
+                                  //   onPressed: () {},
+                                  //   style: ElevatedButton.styleFrom(
+                                  //     backgroundColor: Colors.deepPurpleAccent,
+                                  //     foregroundColor: Colors.white,
+                                  //     shape: RoundedRectangleBorder(
+                                  //       borderRadius: BorderRadius.circular(10),
+                                  //     ),
+                                  //   ),
+                                  //   child: Text('Confirm'),
+                                  // ),
+                                  SizedBox(width: 59,),
+                                  ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.deepPurpleAccent,
+                                      foregroundColor: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      )
+                                  ) ,child: Text('Follow')),
+                                  SizedBox(width: 15,),
+                                  Icon(Icons.close,color: Colors.grey,)
+
+
+
+
+
+                                ],
+                              ),
+                              SizedBox(height: 15,),
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 25,
+                                    backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThM_H4wuCA4iJJz-uqNYj0jaQAzYoXHm0z7A&s"),
+                                  ),
+                                  SizedBox(width: 10,),
+                                  RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: 'Mr Patil ❤️\n ',
+                                          style: TextStyle(
+                                            color: Colors.white,
+
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: 'Followed by shruti_5537',
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 15,),
+                                  // ElevatedButton(
+                                  //   onPressed: () {},
+                                  //   style: ElevatedButton.styleFrom(
+                                  //     backgroundColor: Colors.deepPurpleAccent,
+                                  //     foregroundColor: Colors.white,
+                                  //     shape: RoundedRectangleBorder(
+                                  //       borderRadius: BorderRadius.circular(10),
+                                  //     ),
+                                  //   ),
+                                  //   child: Text('Confirm'),
+                                  // ),
+                                  SizedBox(width: 59,),
+                                  ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.deepPurpleAccent,
+                                      foregroundColor: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      )
+                                  ) ,child: Text('Follow')),
+                                  SizedBox(width: 15,),
+                                  Icon(Icons.close,color: Colors.grey,)
+
+
+
+
+
+                                ],
+                              ),
+                              SizedBox(height: 15,),
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 25,
+                                    backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7uKGX20j1XzjZ_89rX7LSqowGnKmplmdhAg&s"),
+                                  ),
+                                  SizedBox(width: 10,),
+                                  RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: 'Aditi ❤️\n ',
+                                          style: TextStyle(
+                                            color: Colors.white,
+
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: 'Followed by shruti_5537',
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 15,),
+                                  // ElevatedButton(
+                                  //   onPressed: () {},
+                                  //   style: ElevatedButton.styleFrom(
+                                  //     backgroundColor: Colors.deepPurpleAccent,
+                                  //     foregroundColor: Colors.white,
+                                  //     shape: RoundedRectangleBorder(
+                                  //       borderRadius: BorderRadius.circular(10),
+                                  //     ),
+                                  //   ),
+                                  //   child: Text('Confirm'),
+                                  // ),
+                                  SizedBox(width: 59,),
+                                  ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.deepPurpleAccent,
+                                      foregroundColor: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      )
+                                  ) ,child: Text('Follow')),
+                                  SizedBox(width: 15,),
+                                  Icon(Icons.close,color: Colors.grey,),
+
+
+
+
+
+
+                                ],
+                              ),
+                              SizedBox(height: 15,),
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 25,
+                                    backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN__lAaf0b4nZ5asE_zY1IMhPiEh3MgRwBrA&s"),
+                                  ),
+                                  SizedBox(width: 10,),
+                                  RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: 'kiyo\n ',
+                                          style: TextStyle(
+                                            color: Colors.white,
+
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: 'Followed by shruti_5537',
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 15,),
+                                  // ElevatedButton(
+                                  //   onPressed: () {},
+                                  //   style: ElevatedButton.styleFrom(
+                                  //     backgroundColor: Colors.deepPurpleAccent,
+                                  //     foregroundColor: Colors.white,
+                                  //     shape: RoundedRectangleBorder(
+                                  //       borderRadius: BorderRadius.circular(10),
+                                  //     ),
+                                  //   ),
+                                  //   child: Text('Confirm'),
+                                  // ),
+                                  SizedBox(width: 59,),
+                                  ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.deepPurpleAccent,
+                                      foregroundColor: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      )
+                                  ) ,child: Text('Follow')),
+                                  SizedBox(width: 15,),
+                                  Icon(Icons.close,color: Colors.grey,)
+
+
+
+
+
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+
+
                       ],
                     ),
                   ),

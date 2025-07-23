@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner:false,//remove debug banner
       title: 'Instagram',
       theme: ThemeData.dark(),
-      home: LikePage()
+      home: SplashScreen()
 
     );
   }
