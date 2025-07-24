@@ -3,6 +3,7 @@ import 'package:instagram_ui_series/Screens/Home/homepage.dart';
 
 import 'Screens/Chats/chatpage.dart';
 import 'Screens/Login/loginscreen.dart';
+import 'Screens/Post/postscreen.dart';
 import 'Screens/Search/searchpage.dart';
 import 'Screens/Signup/signupscreen.dart';
 import 'Screens/Splash/splashscreen.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner:false,//remove debug banner
       title: 'Instagram',
       theme: ThemeData.dark(),
-      home: SplashScreen()
+      home: SplashScreen ()
 
     );
   }
