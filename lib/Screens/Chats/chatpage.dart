@@ -130,6 +130,7 @@ class Chatpage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
+
       appBar: AppBar(
         toolbarHeight: 88,
         leading: IconButton(onPressed: (){
@@ -162,16 +163,16 @@ class Chatpage extends StatelessWidget{
                 height: 36,
                 width: 300,
                 decoration: BoxDecoration(
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.circular(10.0)
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(10.0)
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 10),
                   child: TextField(
                     controller: searchcontroller,
                     decoration: InputDecoration(
-                      hintText: "Search",
-                      prefixIcon: Icon(CupertinoIcons.search)
+                        hintText: "Search",
+                        prefixIcon: Icon(CupertinoIcons.search)
                     ),
                   ),
                 ),
@@ -210,38 +211,38 @@ class Chatpage extends StatelessWidget{
                               ),
 
 
-                    Positioned(
-                    top: -3,
-                      right: 0,
-                      left: 3,
-                      child: Container(
-                        height: 30, // fixed height to fit one line of text
-                        padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Marquee(
-                          text: arrhorcontent[index]["song"].toString(),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          scrollAxis: Axis.horizontal,
-                          blankSpace: 20.0,
-                          velocity: 30.0,
-                          pauseAfterRound: Duration(seconds: 1),
-                          startPadding: 0.0,
-                          accelerationDuration: Duration(seconds: 1),
-                          accelerationCurve: Curves.linear,
-                          decelerationDuration: Duration(milliseconds: 500),
-                          decelerationCurve: Curves.easeOut,
-                        ),
-                      ),
-                    ),
+                              Positioned(
+                                top: -3,
+                                right: 0,
+                                left: 3,
+                                child: Container(
+                                  height: 30, // fixed height to fit one line of text
+                                  padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey,
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Marquee(
+                                    text: arrhorcontent[index]["song"].toString(),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    scrollAxis: Axis.horizontal,
+                                    blankSpace: 20.0,
+                                    velocity: 30.0,
+                                    pauseAfterRound: Duration(seconds: 1),
+                                    startPadding: 0.0,
+                                    accelerationDuration: Duration(seconds: 1),
+                                    accelerationCurve: Curves.linear,
+                                    decelerationDuration: Duration(milliseconds: 500),
+                                    decelerationCurve: Curves.easeOut,
+                                  ),
+                                ),
+                              ),
 
-                    ],
+                            ],
                           ),
                           SizedBox(height: 7),
                           Text(
@@ -292,7 +293,7 @@ class Chatpage extends StatelessWidget{
             },itemCount: arrContent.length,),
           ),
         ],
-      ),
+      )
 
     );
   }
